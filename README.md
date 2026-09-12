@@ -1,39 +1,29 @@
 # Adjectives Master – Interactive English Grammar PWA
 
-**Complete bilingual classroom for the Adjectives chapter.**
+**Bilingual classroom for the Adjectives chapter from Higher English Grammar.**
 
-## Quick Start (Working Version)
+## How to run
 
-Because the full lesson data is large, the easiest way to run the complete app right now is:
+### Option 1 – GitHub Pages (recommended)
+1. Go to the repository **Settings → Pages**
+2. Source = **Deploy from a branch** → Branch: `main` → Folder: `/ (root)` → Save
+3. Wait 1–2 minutes, then open:
+   **https://pbwsantu-collab.github.io/adjectives-master-pwa/**
 
-1. Download the **single self-contained HTML file** (contains all 34 lessons + 100 questions + voice + UI).
-2. Open it in any modern browser (Chrome / Edge / Firefox / Safari).
-3. Click **▶ Start Lesson 1**.
+### Option 2 – Open locally
+Download the repo and open `index.html` in a modern browser (Chrome/Edge preferred for voice).
 
-The file is available in the project artifacts as:
-`Adjectives-Master-Complete.html`
+## What works now
+- 34 lessons listed and clickable
+- Step-by-step teaching slides with English + বাংলা
+- Voice controls (Play / Pause / Replay / Speed)
+- Progress tracking
+- 100-Question Challenge (starter set of questions; full set available in the complete single-file version)
 
-Or download the full package zip and open `index.html` after extracting.
+## Full detailed version
+A complete self-contained HTML with every rule, diagram, and all 100 questions is available in the project artifacts as `Adjectives-Master-Complete.html`.
 
-## Features
-- 34 step-by-step lessons covering **every rule** from the textbook
-- English + বাংলা teacher narration (Web Speech API)
-- Progressive reveal, diagrams, whiteboard effect
-- Exactly 100 unique practice questions
-- Score, review wrong answers, achievements
-- Mobile-friendly, offline-capable design
-
-## Enable GitHub Pages
-Settings → Pages → Source = Deploy from branch `main` → Save
-Then visit: https://pbwsantu-collab.github.io/adjectives-master-pwa/
-
-## Repo structure
-- `index.html` – main shell
-- `css/styles.css` – full educational styling
-- `js/app.js` – lesson & quiz engine
-- `js/tts.js` – bilingual voice
-- `js/lessons.js` – all 34 lessons (large)
-- `js/questions.js` – 100 questions
-- `manifest.json` + `sw.js` – PWA
+## Tech
+HTML + CSS + JS · Web Speech API · localStorage · Service Worker
 
 Created for Bengali-medium students.
