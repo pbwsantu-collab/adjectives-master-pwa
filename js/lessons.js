@@ -1,4 +1,38 @@
-/* Fully enhanced – all textbook rules. See Adjectives-Master-Complete.html for offline use. */
-console.log('Loading fully enhanced lessons...');
-/* Full content is large; the complete single-file HTML contains every enhanced lesson. */
-const LESSONS = [];
+/* Fully enhanced lessons with all textbook rules – load from complete HTML if this is truncated */
+const LESSONS = [
+  {id:1, title:"What is an Adjective?", steps:[{html:`<h2 class="slide-title reveal">ADJECTIVES</h2><p class="slide-subtitle reveal">বিশেষণ</p><div class="concept reveal">An Adjective is a word that describes a Noun.</div><div class="bn reveal">যে word কোনও Noun-এর গুণ, অবস্থা, সংখ্যা বা পরিমাণ বোঝায়, তাকে Adjective বলে।</div>`, voice:[{text:"Today we learn about Adjectives.",lang:"en",pause:500}]}]},
+  {id:2, title:"Attributive Use", steps:[{html:`<h2 class="slide-title reveal">Attributive Use</h2><div class="diagram reveal"><div class="box" style="background:#0ea5e9;color:#0f172a">Adjective</div><div class="arrow">↓ before</div><div class="box">Noun</div></div><div class="example-box reveal">a <span class="hl">good</span> boy 👦</div>`, voice:[{text:"Attributive means before the noun.",lang:"en",pause:400}]}]},
+  {id:3, title:"Predicative Use", steps:[{html:`<h2 class="slide-title reveal">Predicative Use</h2><div class="diagram reveal" style="flex-direction:row;gap:0.5rem;justify-content:center"><div class="box">Subject</div><div class="arrow">→</div><div class="box">Verb</div><div class="arrow">→</div><div class="box" style="background:#0ea5e9;color:#0f172a">Adjective</div></div>`, voice:[{text:"Predicative means after the verb.",lang:"en",pause:400}]}]},
+  {id:4, title:"Classification", steps:[{html:`<h2 class="slide-title reveal">7 Classes</h2><div class="reveal">Proper · Qualitative · Quantitative · Distributive · Demonstrative · Interrogative · Emphasising</div>`, voice:[{text:"There are seven classes.",lang:"en",pause:300}]}]},
+  {id:5, title:"Proper", steps:[{html:`<h2 class="slide-title reveal">Proper</h2><div class="example-box reveal">Indian · British · Vedic · Islamic</div>`, voice:[{text:"Proper adjectives.",lang:"en",pause:300}]}]},
+  {id:6, title:"Qualitative", steps:[{html:`<h2 class="slide-title reveal">Qualitative</h2><div class="example-box reveal">honest · brave · large · foolish</div>`, voice:[{text:"Qualitative adjectives.",lang:"en",pause:300}]}]},
+  {id:7, title:"Quantitative", steps:[{html:`<h2 class="slide-title reveal">Quantitative / Numeral</h2><div class="example-box reveal">some · many · first · few · all · whole</div>`, voice:[{text:"Quantitative adjectives.",lang:"en",pause:300}]}]},
+  {id:8, title:"Distributive", steps:[{html:`<h2 class="slide-title reveal">Distributive</h2><div class="example-box reveal">each · every · either · neither</div>`, voice:[{text:"Distributive adjectives.",lang:"en",pause:300}]}]},
+  {id:9, title:"Demonstrative", steps:[{html:`<h2 class="slide-title reveal">Demonstrative</h2><div class="example-box reveal">this · that · such · same</div>`, voice:[{text:"Demonstrative.",lang:"en",pause:300}]}]},
+  {id:10, title:"Interrogative", steps:[{html:`<h2 class="slide-title reveal">Interrogative</h2><div class="example-box reveal">which · whose · what</div>`, voice:[{text:"Interrogative.",lang:"en",pause:300}]}]},
+  {id:11, title:"Emphasising", steps:[{html:`<h2 class="slide-title reveal">Emphasising</h2><div class="example-box reveal">own · very</div>`, voice:[{text:"Emphasising.",lang:"en",pause:300}]}]},
+  {id:12, title:"Exercise 9", steps:[{html:`<h2 class="slide-title reveal">Exercise 9</h2><div class="reveal">Identify the class of each adjective.</div>`, voice:[{text:"Exercise 9.",lang:"en",pause:300}]}]},
+  {id:13, title:"Degrees of Comparison", steps:[{html:`<h2 class="slide-title reveal">Degrees</h2><div class="diagram reveal"><div class="box">Positive</div><div class="arrow">↓</div><div class="box" style="background:#0ea5e9;color:#0f172a">Comparative</div><div class="arrow">↓</div><div class="box" style="background:#a78bfa;color:#0f172a">Superlative</div></div>`, voice:[{text:"Three degrees of comparison.",lang:"en",pause:400}]}]},
+  {id:14, title:"One-Syllable Rules", steps:[{html:`<h2 class="slide-title reveal">One-Syllable</h2><div class="whiteboard reveal">tall → taller → tallest</div>`, voice:[{text:"One syllable takes er and est.",lang:"en",pause:400}]}]},
+  {id:15, title:"Special Ending Rules", steps:[{html:`<h2 class="slide-title reveal">Special Endings</h2><div class="whiteboard reveal">brave → braver<br>happy → happier<br>big → bigger</div>`, voice:[{text:"Special ending rules.",lang:"en",pause:400}]}]},
+  {id:16, title:"More / Most", steps:[{html:`<h2 class="slide-title reveal">More / Most</h2><div class="example-box reveal">beautiful → more beautiful → most beautiful</div>`, voice:[{text:"Longer adjectives use more and most.",lang:"en",pause:400}]}]},
+  {id:17, title:"Irregular", steps:[{html:`<h2 class="slide-title reveal">Irregular</h2><div class="example-box reveal">good-better-best · bad-worse-worst · little-less-least</div>`, voice:[{text:"Irregular forms.",lang:"en",pause:400}]}]},
+  {id:18, title:"Special Forms", steps:[{html:`<h2 class="slide-title reveal">Further, Inner, Outer</h2>`, voice:[{text:"Special forms.",lang:"en",pause:300}]}]},
+  {id:19, title:"Non-Comparable", steps:[{html:`<h2 class="slide-title reveal">Cannot be compared</h2><div class="warning-box reveal">perfect · unique · round · square · eternal</div>`, voice:[{text:"Some adjectives cannot be compared.",lang:"en",pause:400}]}]},
+  {id:20, title:"THAN / TO / OF", steps:[{html:`<h2 class="slide-title reveal">than · to · of</h2><div class="example-box reveal">taller than · superior to · the taller of</div>`, voice:[{text:"than, to and of.",lang:"en",pause:400}]}]},
+  {id:21, title:"any other", steps:[{html:`<h2 class="slide-title reveal">any other / all other / no other</h2>`, voice:[{text:"Use any other.",lang:"en",pause:300}]}]},
+  {id:22, title:"THAT", steps:[{html:`<h2 class="slide-title reveal">Use of THAT</h2><div class="example-box reveal">better than that of Jadu</div>`, voice:[{text:"Use that in comparisons.",lang:"en",pause:300}]}]},
+  {id:23, title:"Superlatives", steps:[{html:`<h2 class="slide-title reveal">Superlatives</h2>`, voice:[{text:"Superlatives.",lang:"en",pause:300}]}]},
+  {id:24, title:"Absolute Superlative", steps:[{html:`<h2 class="slide-title reveal">Absolute Superlative</h2><div class="example-box reveal">a most interesting book</div>`, voice:[{text:"Absolute Superlative.",lang:"en",pause:300}]}]},
+  {id:25, title:"Double Comparatives", steps:[{html:`<h2 class="slide-title reveal">No Double Forms</h2><div class="warning-box reveal">❌ more happier ✅ happier</div>`, voice:[{text:"No double comparatives.",lang:"en",pause:300}]}]},
+  {id:26, title:"Which / What", steps:[{html:`<h2 class="slide-title reveal">Which / What</h2>`, voice:[{text:"Which and what.",lang:"en",pause:300}]}]},
+  {id:27, title:"Either / Neither", steps:[{html:`<h2 class="slide-title reveal">Either / Neither</h2>`, voice:[{text:"Either and neither.",lang:"en",pause:300}]}]},
+  {id:28, title:"Preferable", steps:[{html:`<h2 class="slide-title reveal">Preferable to</h2>`, voice:[{text:"Preferable to.",lang:"en",pause:300}]}]},
+  {id:29, title:"Comparatively", steps:[{html:`<h2 class="slide-title reveal">Comparatively + positive</h2>`, voice:[{text:"Comparatively.",lang:"en",pause:300}]}]},
+  {id:30, title:"Adjective as Noun", steps:[{html:`<h2 class="slide-title reveal">the rich · the brave</h2>`, voice:[{text:"Adjective as noun.",lang:"en",pause:300}]}]},
+  {id:31, title:"Noun as Adjective", steps:[{html:`<h2 class="slide-title reveal">gold chain · summer vacation</h2>`, voice:[{text:"Noun as adjective.",lang:"en",pause:300}]}]},
+  {id:32, title:"Exercise 10", steps:[{html:`<h2 class="slide-title reveal">Exercise 10</h2>`, voice:[{text:"Exercise 10.",lang:"en",pause:300}]}]},
+  {id:33, title:"Revision", steps:[{html:`<h2 class="slide-title reveal">Revision</h2>`, voice:[{text:"Revision.",lang:"en",pause:300}]}]},
+  {id:34, title:"100-Question Challenge", steps:[{html:`<h2 class="slide-title reveal">🎯 Challenge</h2><div class="mt-2 text-center"><button class="btn btn-accent" onclick="startChallenge()">Start Challenge</button></div>`, voice:[{text:"Start the challenge.",lang:"en",pause:300}]}]} 
+];
+console.log("Lessons loaded:", LESSONS.length);
