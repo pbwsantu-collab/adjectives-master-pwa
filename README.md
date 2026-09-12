@@ -1,36 +1,39 @@
 # Adjectives Master – Interactive English Grammar PWA
 
-A complete **classroom-style Progressive Web App** teaching the full chapter on **Adjectives** from *A Text-Book of Higher English Grammar*.
+**Complete bilingual classroom for the Adjectives chapter.**
 
-## Live Demo
-Enable **GitHub Pages** (Settings → Pages → Deploy from main branch) then open:
-`https://pbwsantu-collab.github.io/adjectives-master-pwa/`
+## Quick Start (Working Version)
+
+Because the full lesson data is large, the easiest way to run the complete app right now is:
+
+1. Download the **single self-contained HTML file** (contains all 34 lessons + 100 questions + voice + UI).
+2. Open it in any modern browser (Chrome / Edge / Firefox / Safari).
+3. Click **▶ Start Lesson 1**.
+
+The file is available in the project artifacts as:
+`Adjectives-Master-Complete.html`
+
+Or download the full package zip and open `index.html` after extracting.
 
 ## Features
-- 34 step-by-step lessons with progressive reveal
-- Bilingual English + বাংলা explanations
-- Natural teacher-style voice narration (Web Speech API)
-- Synchronized visual + audio teaching
-- Digital whiteboard writing effect
-- Diagrams and rule boxes
-- **Exactly 100 unique questions** covering every rule
-- Click-to-answer with Bengali feedback
-- Score, wrong-answer review, achievements
-- Offline-capable PWA (installable)
-- Progress saved in localStorage
-- Mobile-first beautiful design
+- 34 step-by-step lessons covering **every rule** from the textbook
+- English + বাংলা teacher narration (Web Speech API)
+- Progressive reveal, diagrams, whiteboard effect
+- Exactly 100 unique practice questions
+- Score, review wrong answers, achievements
+- Mobile-friendly, offline-capable design
 
-## How to use
-1. Open the site or `index.html`
-2. Click **Start Lesson 1**
-3. Use ▶ / ⏸ / 🔁 / speed controls
-4. Complete lessons → take the 100-Question Challenge
+## Enable GitHub Pages
+Settings → Pages → Source = Deploy from branch `main` → Save
+Then visit: https://pbwsantu-collab.github.io/adjectives-master-pwa/
 
-## Content Coverage
-All rules from the textbook pages on Adjectives including:
-Attributive / Predicative, Epithet, only-attributive & only-predicative lists, 7 classifications, Exercise 9, Degrees of Comparison, one-syllable rules (e, y, doubling), multi-syllable more/most, two-syllable -le/-y/-er/-ow, irregular comparison, special forms (further, inner, outer…), non-comparable adjectives, THAN / TO / OF, any other / all other / no other, THAT in comparisons, Absolute Superlative, double comparatives, preferable, comparatively, adjectives as nouns, nouns as adjectives, Exercise 10 (A)(B)(C).
+## Repo structure
+- `index.html` – main shell
+- `css/styles.css` – full educational styling
+- `js/app.js` – lesson & quiz engine
+- `js/tts.js` – bilingual voice
+- `js/lessons.js` – all 34 lessons (large)
+- `js/questions.js` – 100 questions
+- `manifest.json` + `sw.js` – PWA
 
-## Tech Stack
-Pure HTML / CSS / JS · Web Speech API · Service Worker · localStorage · No backend required.
-
-Created for Bengali-medium students with a patient teacher voice.
+Created for Bengali-medium students.
