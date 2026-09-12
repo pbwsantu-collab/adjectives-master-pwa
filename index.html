@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="Interactive bilingual classroom for English Adjectives – Higher English Grammar. Teacher voice, step-by-step slides, 100-question challenge." />
+  <title>Adjectives Master – English Grammar Classroom</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="topbar" id="topbar">
+    <div class="brand">📘 <span id="brandText">Adjectives Master</span></div>
+    <div class="progress-info">
+      <div id="progressLabel">Ready</div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill"></div></div>
+    </div>
+    <button class="btn btn-ghost" id="menuBtn" title="Menu">☰</button>
+  </header>
+  <main class="stage" id="stage">
+    <section class="home-screen" id="homeScreen">
+      <div class="home-hero">
+        <h1>Adjectives Master</h1>
+        <p>A complete interactive classroom for the chapter on <strong>Adjectives</strong> from Higher English Grammar.<br>
+        English + বাংলা · Teacher voice · Step-by-step slides · 100-question challenge</p>
+        <div class="flex gap-1 center" style="flex-wrap:wrap">
+          <button class="btn btn-primary" id="startBtn">▶ Start Lesson 1</button>
+          <button class="btn btn-accent" id="challengeBtn">🎯 100-Question Challenge</button>
+          <button class="btn btn-ghost" id="continueBtn">Continue</button>
+        </div>
+        <div class="achievements mt-2" id="homeAchievements"></div>
+      </div>
+      <h3 style="margin:1.5rem 0 0.6rem;color:var(--text-muted);font-size:0.9rem">All Lessons</h3>
+      <div class="lesson-list" id="lessonList"></div>
+    </section>
+    <section class="hidden" id="lessonScreen">
+      <div class="slide-card" id="slideCard"></div>
+    </section>
+    <section class="quiz-screen hidden" id="quizScreen">
+      <div class="q-card" id="quizCard">
+        <div class="q-num" id="qNum">Question 1 / 100</div>
+        <div class="q-text" id="qText"></div>
+        <div class="options" id="qOptions"></div>
+        <div class="feedback" id="qFeedback"></div>
+        <div class="mt-2 flex gap-1 center" id="quizNav"></div>
+      </div>
+    </section>
+    <section class="result-screen hidden" id="resultScreen">
+      <div class="q-card text-center">
+        <h2>🎉 Adjective Master Test Complete</h2>
+        <div class="score-circle" id="scoreCircle" style="--pct:0">
+          <div class="score-inner">
+            <div class="big" id="scorePct">0%</div>
+            <div class="small" id="scoreText">0 / 100</div>
+          </div>
+        </div>
+        <p id="scoreMessage" class="mt-1"></p>
+        <div class="mt-2 flex gap-1 center" style="flex-wrap:wrap">
+          <button class="btn btn-primary" id="reviewWrongBtn">Review Wrong Answers</button>
+          <button class="btn btn-accent" id="retryBtn">Try Again</button>
+          <button class="btn btn-ghost" id="printResultBtn">Print Result</button>
+          <button class="btn btn-ghost" id="homeFromResultBtn">Home</button>
+        </div>
+      </div>
+    </section>
+    <section class="quiz-screen hidden" id="reviewScreen">
+      <div class="q-card">
+        <h2 class="mb-1">❌ Questions You Got Wrong</h2>
+        <div id="wrongList"></div>
+        <button class="btn btn-primary mt-2" id="backFromReviewBtn">Back to Result</button>
+      </div>
+    </section>
+  </main>
+  <footer class="controls" id="controls">
+    <div class="voice-controls" id="voiceControls">
+      <button class="btn" id="prevStepBtn" title="Previous">⏮</button>
+      <button class="btn btn-primary" id="playPauseBtn" title="Play / Pause">▶</button>
+      <button class="btn" id="nextStepBtn" title="Next">⏭</button>
+      <button class="btn" id="replayBtn" title="Replay">🔁</button>
+      <button class="btn" id="voiceToggleBtn" title="Voice On/Off">🔊</button>
+      <button class="btn" id="speedBtn" title="Speed">▶ Normal</button>
+    </div>
+    <div class="flex gap-1">
+      <button class="btn btn-ghost" id="prevLessonBtn">← Prev</button>
+      <button class="btn btn-primary" id="nextLessonBtn">Next →</button>
+    </div>
+  </footer>
+  <script src="js/tts.js"></script>
+  <script src="js/lessons.js"></script>
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').catch(console.warn);
+    }
+  </script>
+</body>
+</html>
