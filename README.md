@@ -2,28 +2,44 @@
 
 **Bilingual classroom for the Adjectives chapter from Higher English Grammar.**
 
+English + বাংলা · Teacher voice · Step-by-step slides · Diagrams · 100-question challenge
+
+---
+
 ## How to run
 
-### Option 1 – GitHub Pages (recommended)
-1. Go to the repository **Settings → Pages**
-2. Source = **Deploy from a branch** → Branch: `main` → Folder: `/ (root)` → Save
-3. Wait 1–2 minutes, then open:
-   **https://pbwsantu-collab.github.io/adjectives-master-pwa/**
+### 1. GitHub Pages (live site)
+1. Go to **Settings → Pages**
+2. Source = Deploy from a branch → `main` → `/ (root)` → Save
+3. Open: **https://pbwsantu-collab.github.io/adjectives-master-pwa/**
 
-### Option 2 – Open locally
-Download the repo and open `index.html` in a modern browser (Chrome/Edge preferred for voice).
+### 2. Complete enhanced version (recommended)
+The richest version (all detailed rules, full Exercise 9 & 10, richer diagrams and Bengali notes) is the single self-contained file:
 
-## What works now
-- 34 lessons listed and clickable
-- Step-by-step teaching slides with English + বাংলা
-- Voice controls (Play / Pause / Replay / Speed)
+**`Adjectives-Master-Complete.html`**
+
+- Open it directly in Chrome / Edge
+- Works offline
+- Contains every rule from the textbook + illustrations
+
+(You can download it from the project artifacts or ask for it to be re-uploaded.)
+
+### 3. Local modular version
+Clone the repo and open `index.html`.
+
+---
+
+## Features
+- 34 step-by-step lessons
+- English + Bengali explanations
+- Teacher-style voice narration
+- Diagrams & illustrations
+- Interactive 100-question challenge
 - Progress tracking
-- 100-Question Challenge (starter set of questions; full set available in the complete single-file version)
+- PWA ready (installable)
 
-## Full detailed version
-A complete self-contained HTML with every rule, diagram, and all 100 questions is available in the project artifacts as `Adjectives-Master-Complete.html`.
-
-## Tech
-HTML + CSS + JS · Web Speech API · localStorage · Service Worker
+## Textbook coverage
+All major rules from the Adjectives chapter are covered:
+Attributive / Predicative, 7 classifications, Degrees of Comparison, formation rules, irregular forms, any other / THAT, Absolute Superlative, preferable, comparatively, Exercise 9 & 10, and more.
 
 Created for Bengali-medium students.
